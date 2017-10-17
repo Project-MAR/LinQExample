@@ -214,6 +214,19 @@ namespace practice
             Console.ReadLine();
         }
 
+        public static void testExcept()
+        {
+            double[] numbers1 = { 2.0, 2.1, 2.2, 2.3, 2.4, 2.5 };
+            double[] numbers2 = { 2.2 };
+
+            IEnumerable<double> onlyInFirstSet = numbers1.Except(numbers2);
+            foreach (var item in onlyInFirstSet)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
+        }
+
         static void Main(string[] args)
         {
             //testFilter();
@@ -224,7 +237,8 @@ namespace practice
             //testConcate();
             //testDefaultIfEmpty();
             //testEnumRange();
-            testEnumRepeat();
+            //testEnumRepeat();
+            testExcept();
 
         }        
     }

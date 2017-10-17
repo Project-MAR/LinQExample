@@ -21,6 +21,15 @@ namespace practice
             public int DepartmentId { get; set; }
         }
 
+        class Plant
+        {
+            public string Name { get; set; }
+        }
+
+        class CarnivorousPlant : Plant
+        {
+            public string TrapType { get; set; }
+        }
 
         public static void testFilter()
         {
@@ -116,12 +125,33 @@ namespace practice
             Console.ReadLine();
         }
 
+        public static void testConversion()
+        {
+            Plant[] plants = new Plant[] {
+                new CarnivorousPlant { Name = "Venus Fly Trap", TrapType = "Snap Trap" },
+                new CarnivorousPlant { Name = "Pitcher Plant", TrapType = "Pitfall Trap" },
+                new CarnivorousPlant { Name = "Sundew", TrapType = "Flypaper Trap" },
+                new CarnivorousPlant { Name = "Waterwheel Plant", TrapType = "Snap Trap" }
+            };
+
+            var query = from CarnivorousPlant cPlant in plants
+                        where cPlant.TrapType == "Snap Trap"
+                        select cPlant;
+
+            foreach (var item in query)
+            {
+                Console.WriteLine("Name = {0}, Trap Type = {1}", item.Name, item.TrapType);
+            }
+            Console.ReadLine();
+        }
+
         static void Main(string[] args)
         {
             //testFilter();
             //testJoin();
             //testOrderBy();
-            testGroup();
+            //testGroup();
+            testConversion();
         }        
     }
 }

@@ -31,6 +31,12 @@ namespace practice
             public string TrapType { get; set; }
         }
 
+        class Pet
+        {
+            public string Name { get; set; }
+            public int Age { get; set; }
+        }
+
         public static void testFilter()
         {
             List<string> words = new List<string>() { "an", "apple", "a", "day" };
@@ -145,13 +151,36 @@ namespace practice
             Console.ReadLine();
         }
 
+        public static void testConcate()
+        {
+            Pet[] cats = {
+                new Pet { Name="Barley", Age=8 },
+                new Pet { Name="Boots", Age=4 },
+                new Pet { Name="Whiskers", Age=1 }
+            };
+
+            Pet[] dogs = {
+                new Pet { Name="Bounder", Age=3 },
+                new Pet { Name="Snoopy", Age=14 },
+                new Pet { Name="Fido", Age=9 }
+            };
+
+            IEnumerable<string> query = cats.Select(cat => cat.Name).Concat(dogs.Select(dog => dog.Name));
+            foreach (var item in query)
+            {
+                Console.WriteLine("Name = {0}", item);
+            }
+            Console.ReadLine();
+        }
+
         static void Main(string[] args)
         {
             //testFilter();
             //testJoin();
             //testOrderBy();
             //testGroup();
-            testConversion();
+            //testConversion();
+            testConcate();
         }        
     }
 }

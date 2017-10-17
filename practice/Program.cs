@@ -190,6 +190,19 @@ namespace practice
             Console.ReadLine();
         }
 
+        public static void testEnumRange()
+        {
+            // Generate a sequence of integers from 1 to 5  
+            // and then select their squares.
+
+            IEnumerable<int> squares = Enumerable.Range(1, 5).Select(x => x * x);
+            foreach (var item in squares)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
+        }
+
         static void Main(string[] args)
         {
             //testFilter();
@@ -198,7 +211,8 @@ namespace practice
             //testGroup();
             //testConversion();
             //testConcate();
-            testDefaultIfEmpty();
+            //testDefaultIfEmpty();
+            testEnumRange();
 
         }        
     }

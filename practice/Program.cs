@@ -203,6 +203,17 @@ namespace practice
             Console.ReadLine();
         }
 
+        public static void testEnumRepeat()
+        {
+            IEnumerable<string> strings = Enumerable.Repeat("Apple", 3);
+
+            foreach (var item in strings)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
+        }
+
         static void Main(string[] args)
         {
             //testFilter();
@@ -212,7 +223,8 @@ namespace practice
             //testConversion();
             //testConcate();
             //testDefaultIfEmpty();
-            testEnumRange();
+            //testEnumRange();
+            testEnumRepeat();
 
         }        
     }

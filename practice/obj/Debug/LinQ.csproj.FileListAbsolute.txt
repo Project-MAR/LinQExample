@@ -1,0 +1,6 @@
+F:\workspace\practice\practice\obj\Debug\LinQ.csprojResolveAssemblyReference.cache
+F:\workspace\practice\practice\bin\Debug\practice.exe.config
+F:\workspace\practice\practice\bin\Debug\practice.exe
+F:\workspace\practice\practice\bin\Debug\practice.pdb
+F:\workspace\practice\practice\obj\Debug\practice.exe
+F:\workspace\practice\practice\obj\Debug\practice.pdb

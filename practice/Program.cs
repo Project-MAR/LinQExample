@@ -173,6 +173,23 @@ namespace practice
             Console.ReadLine();
         }
 
+        public static void testDefaultIfEmpty()
+        {
+            Pet barley = new Pet() { Name = "Barley", Age = 4 };
+            Pet boots = new Pet() { Name = "Boots", Age = 1 };
+            Pet whiskers = new Pet() { Name = "Whiskers", Age = 6 };
+            Pet bluemoon = new Pet() { Name = "Blue Moon", Age = 9 };
+            Pet daisy = new Pet() { Name = "Daisy", Age = 3 };
+
+            List<Pet> pets = new List<Pet>() { barley, boots, whiskers, bluemoon, daisy };
+            //List<Pet> pets = new List<Pet>();
+            foreach (var item in pets.DefaultIfEmpty(new Pet() { Name = "dummy", Age = -1 }))
+            {
+                Console.WriteLine("Name = {0}", item.Name);
+            }
+            Console.ReadLine();
+        }
+
         static void Main(string[] args)
         {
             //testFilter();
@@ -180,7 +197,9 @@ namespace practice
             //testOrderBy();
             //testGroup();
             //testConversion();
-            testConcate();
+            //testConcate();
+            testDefaultIfEmpty();
+
         }        
     }
 }

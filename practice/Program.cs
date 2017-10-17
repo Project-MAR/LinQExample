@@ -74,10 +74,37 @@ namespace practice
             Console.ReadKey();
         }
 
+        public static void testOrderBy()
+        {
+            int[] num = { -20, 12, 6, 10, 0, -3, 1 };
+
+            var posNums = from n in num
+                          orderby n
+                          select n;
+
+            Console.WriteLine("Values in ascending order: ");
+            foreach (int i in posNums)
+            {
+                Console.Write(i + "\n");
+            }
+
+            var posNumDesc = from n in num
+                             orderby n descending
+                             select n;
+
+            Console.WriteLine("\nValues in descending  order: ");
+            foreach (int i in posNumDesc)
+            {
+                Console.Write(i + "\n");
+            }
+            Console.ReadLine();
+        }
+
         static void Main(string[] args)
         {
             //testFilter();
-            testJoin();
+            //testJoin();
+            testOrderBy();
         }        
     }
 }
